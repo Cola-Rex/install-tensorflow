@@ -1,8 +1,8 @@
 # install-tensorflow
 introduce how to install tensorflow for CentOS/Windows
 
-## install tensorflow for CentOS
-CentOS version : 7.2_64bit
+# 1.install tensorflow for CentOS
+CentOS version : 7.2_64bit <br>
 python version : 2.7.5
 
 1、确保你的Python版本在2.7以上，可以使用`python -V`查看可以当前Python版本，
@@ -43,3 +43,38 @@ PS：如果你的网络打开上述网址或者下载很慢，可以使用国内
 ![验证](http://img.blog.csdn.net/20170312231428091?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRXpyZWFsX0tpbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
 **bingo**~TensorFlow的运行环境已经搭建成功。
+
+
+# 2.install tensorflow for Windows
+Windows version : 10 <br>
+python version : 3.5.3
+
+主要思路其实和在Linux上安装过程大致相同，如下：
+`python -> pip -> tensorflow-xxx.whl -> 搞定~`
+1、首先要注意的是，现阶段最新的发布版本**TensorFlow1.0.1**只能支持python3.5.x的版本，没错是“**只能**”，3.4以下的版本不支持很好理解，但是3.6也不支持，就是这么任性。
+从链接https://www.python.org/ftp/python/3.5.3/python-3.5.3-amd64.exe （官网的）下载3.5.3版本的python，并安装。
+在第一个界面注意给添加环境变量打勾：
+![python](http://img.blog.csdn.net/20170322233313432?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRXpyZWFsX0tpbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+2、安装好之后，应该已经顺带安装了pip。打开PowerShell（或者命令提示符--`win+r`，输入`cmd`）。
+输入`python.exe -V`查看python版本是否正确：
+![python](http://img.blog.csdn.net/20170322233846476?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRXpyZWFsX0tpbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+再输入`pip.exe -V`查看pip版本：
+![pip](http://img.blog.csdn.net/20170322233941263?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRXpyZWFsX0tpbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+3、去github的tensorflow项目—https://github.com/tensorflow/tensorflow 下载最新release版本，翻到下面可以看到：
+![这里写图片描述](http://img.blog.csdn.net/20170322234503453?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRXpyZWFsX0tpbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+箭头所指的就是可在windows运行的CPU版本了，点击“Python 3.5 64-bit”，即可开始下载，得到名为“tensorflow-1.0.1-cp35-cp35m-win_amd64.whl”的whl格式文件。用PowerShell进入到文件所在目录。
+
+4、执行`pip.exe install .\tensorflow-1.0.1-cp35-cp35m-win_amd64.whl`，安装就开始了。稍等片刻：
+![success](http://img.blog.csdn.net/20170322235432059?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRXpyZWFsX0tpbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+看到最后的'Successfully installed ...'，就代表安装完成了。
+
+<hr>
+
+安装过程已经搞定，接下来就验证一下。
+执行`python.exe`，依次输入并获得输出即代表安装成功了。
+![验证](http://img.blog.csdn.net/20170322235912269?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRXpyZWFsX0tpbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+bingo~
